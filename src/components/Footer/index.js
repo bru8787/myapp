@@ -1,6 +1,7 @@
-const Footer=()=>{
-    return <div className="card-footer">
-    <small className="text-muted">Last updated 3 mins ago</small>
+const Footer=(children,price,rating,discountPercentage,stock)=>{
+    return<div className="card-footer">
+    
+    <small className="text"></small>
   </div>
 }
 

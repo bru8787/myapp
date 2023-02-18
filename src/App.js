@@ -71,7 +71,7 @@ function App() {
         onClick={e => setModalState({ show: false, src: "" })}
       />
 
-      <div className="row justify-content-center">
+      <div className="row row-cols-1 row-cols-md-3 g-4 ">
         {showProduct()}
       </div>
       <div className='container'>
