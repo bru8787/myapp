@@ -32,14 +32,13 @@ function App() {
   }, [skip, searchText]);
 
   const searchHandler = (text) => {
-    setSearchText(text.toLowerCase());
+    
+    setSearchText(text);
     setSkip(0);
 
-    /*     (text === '') ? setLimit(6) : setLimit(total);
-        if(searchT) */
   }
 
-  const onBacHandle = e => {
+  const onBackHandle = e => {
     if (skip - limit >= 0) {
       setSkip(skip - limit);
     }
@@ -49,12 +48,6 @@ function App() {
       setSkip(skip + limit);
     }
   };
-
-  /*   const mustShow = (product) => {
-      const brand = product.brand.toLowerCase();
-      const ret = searchText === '' || (brand.indexOf(searchText) >= 0);
-      return ret;
-    }; */
   const showProduct = () => {
     if (!products) return "caricamento ...";
     return products.map((product, key) => <Card product={product} key={`card-${product.id}`}
@@ -67,15 +60,17 @@ function App() {
     <div className=" App container ">
       <h1>E-COMMERCE</h1>
       <Search handler={searchHandler} />
-      <Modal show={modalState.show} src={modalState.src}
+      <Modal show={modalState.show} src={modalState.src} 
         onClick={e => setModalState({ show: false, src: "" })}
       />
-
-      <div className="row row-cols-1 row-cols-md-3 g-4 ">
-        {showProduct()}
-      </div>
       <div className='container'>
-        <Button onClick={onBacHandle}>Indietro</Button>
+        <div className="row row-cols-1 row-cols-md-3 g-4  ">
+          {showProduct()}
+
+
+          
+        </div>
+        <Button onClick={onBackHandle}>Indietro</Button>
         <Button onClick={onForwordHandle}>Avanti</Button>
       </div>
     </div>

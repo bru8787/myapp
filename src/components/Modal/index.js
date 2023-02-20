@@ -1,27 +1,29 @@
 /* import Button from "../Button"; */
-// import Image from "../Image";
+import Image from "../Image";
 
-function Modal({ show, src, title, onClick }) {
+function Modal({ show, src, title,imageHandler }) {
 
   return show &&
-    <div>
-    <img src={src} alt= "modal imagine" onClick={onClick}/>
-    </div>
-   
-
-    // <div className="modal fade" id="exampleModal" tabndex="-1" ariaLabelledby="exampleModalLabel" ariaHidden="true">
-    //   <div className="modal-dialog">
-    //     <div className="modal-content">
-    //       <div className="modal-header">
-    //         <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-    //       </div>
-    //       <div className="modal-body">
-    //         <Image src={src} alt={imageDescription} onClick={onClick} />
-    //       </div>
-    //     </div>
-    //   </div>
-    //   </div
+ 
+  <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className="modal-dialog">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          </div>
+          <div className="modal-body">
+          <Image imageHandler={imageHandler} title={title} src={src}   />
+          </div>
+        </div>
+      </div>
+      </div>
+  </div>
     
+     
+
+  
+ 
 };
 
       export default Modal; 
